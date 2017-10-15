@@ -41,7 +41,7 @@ public class SPAboutController implements SPCustomizable{
                                           new Image("/rec/icons/transparentlogo/32.png"),
                                           new Image("/rec/icons/transparentlogo/24.png"),
                                           new Image("/rec/icons/transparentlogo/16.png")); 
-        this.verLabel.setText("1.0b");
+        this.verLabel.setText("1.0a");
         this.applyTheme(SPSettings.getThemePath());        
         this.setNightModeEnabled(SPSettings.getNightMode());
         String usedOrie = this.resources.getString("NODE_ORIENTATION");        
