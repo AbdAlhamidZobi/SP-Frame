@@ -1,0 +1,91 @@
+/*
+    this style sheet is for the custom windows     
+*/
+
+#title-bar{    
+    -fx-background-color: #282828;     
+    -fx-border-color: #666666 ;
+    -fx-border-style:solid;  
+    -fx-opacity: 0.9;  
+    -fx-border-radius: 5 5 0 0;
+    -fx-background-radius: 5 5 0 0;
+    -fx-effect: dropshadow( one-pass-box , rgba(0, 0, 0,0.5) , 7 , 0.1 , 1 , 2 );
+}
+
+#title-label{
+    -fx-text-fill: whitesmoke;    
+    -fx-font-family:"Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    -fx-font-weight: bold;  
+    -fx-padding: 7 10 5 5;
+}
+
+#title-label > .image-view{
+    -fx-opacity: 0.5;
+}
+
+#close-button ,#max-button , #min-button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;    
+    -fx-border-color: transparent;
+    -fx-text-fill: #666666;
+    -fx-font-size: 16px;
+    -fx-font-family: "Segoe UI", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    -fx-font-weight: bold;   
+}
+
+#max-button {
+    -fx-padding: 1 7 1 5;   
+    -fx-graphic-text-gap: 0;       
+}
+
+#close-button:hover{
+    -fx-text-fill: whitesmoke;
+    -fx-background-color: rgba(255,10,10,0.5);    
+}
+
+#min-button:hover , #max-button:hover{
+    -fx-text-fill: whitesmoke;
+    -fx-background-color: rgba(240,240,240,0.5);   
+}
+
+#algin-rectangle{    
+    -fx-border-radius: 3;      
+    -fx-stroke: linear-gradient(to bottom left,
+                               rgba(217, 218, 219,0.85) 5%, /*70,85,100,0.25 (a bit dark gray blue)*/
+                               rgba(205, 224, 242,0.75) 18%,  /*(25,40,55,0.25 (black blue)*/                               
+                               rgba(234, 236, 237,0.85) 40%, /*65,85,100,0.25 (gray blue)*/                               
+                               rgba(205, 224, 242,0.75) 50%,  /*(25,40,55,0.25 (black blue)*/                               
+                               rgba(217, 218, 219,0.85) 60%, /*70,85,100,0.25 (a bit dark gray blue)*/                               
+                               rgba(234, 236, 237,0.78) 70%, /*65,85,100,0.25 (gray blue)*/                                                             
+                               rgba(205, 224, 242,0.48) 90%); /*25,40,55,0.25 (black blue)*/
+    -fx-stroke-width: 1;
+    -fx-arc-height: 20;
+    -fx-arc-width: 20;        
+    -fx-fill: linear-gradient(to bottom left,
+                               rgba(217, 218, 219,0.15) 5%, /*70,85,100,0.25 (a bit dark gray blue)*/
+                               rgba(205, 224, 242,0.15) 18%,  /*(25,40,55,0.25 (black blue)*/                               
+                               rgba(205, 224, 242,0.20) 35%, /**25,40,55,0.25 (black blue)*/
+                               rgba(234, 236, 237,0.15) 40%, /*65,85,100,0.25 (gray blue)*/
+                               rgba(234, 236, 237,0.15) 42%, /*65,85,100,0.25 (gray blue)*/
+                               rgba(205, 224, 242,0.15) 50%,  /*(25,40,55,0.25 (black blue)*/
+                               rgba(205, 224, 242,0.20) 55%,  /*25,40,55,0.25 (black blue)*/
+                               rgba(217, 218, 219,0.05) 60%, /*70,85,100,0.25 (a bit dark gray blue)*/
+                               rgba(217, 218, 219,0.05) 65%, /*70,85,100,0.25 (a bit dark gray blue)*/
+                               rgba(234, 236, 237,0.08) 70%, /*65,85,100,0.25 (gray blue)*/
+                               rgba(205, 224, 242,0.15) 78%,  /*(25,40,55,0.25 (black blue)*/
+                               rgba(205, 224, 242,0.20) 83%,  /*25,40,55,0.25 (black blue)*/
+                               rgba(205, 224, 242,0.08) 90%); /*25,40,55,0.25 (black blue)*/
+    -fx-background-repeat: repeat;      
+}
+
+#background{           
+   -fx-background-color: whitesmoke;
+    -fx-border-color: transparent #666666 #666666 #666666;  
+    -fx-border-width: 1;
+    -fx-background-radius: 5 5 0 0;
+    -fx-border-radius: 5 5 0 0;
+}
+
+#close-button{
+    -fx-background-radius: 5 0 0 0;
+}

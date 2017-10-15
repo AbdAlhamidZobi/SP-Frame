@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane id="main-pane" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spframe.SPAboutController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <ImageView id="banner-image" fx:id="bannerView" fitHeight="245.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
+         <GridPane.margin>
+            <Insets left="5.0" top="5.0" />
+         </GridPane.margin></ImageView>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+         <children>
+            <Label id="header-label" text="%ABOUT_HEADER_LABEL">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label id="version-label" fx:id="verLabel">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label id="about-label" styleClass="label-custom" text="%ABOUT_ABOUT_LABEL">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label id="feature-label" styleClass="label-custom" text="%ABOUT_FEATURE_LABLE">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="15.0" right="5.0" />
+               </VBox.margin>               
+            </Label>
+         </children>
+      </VBox>
+      <HBox fx:id="lowerBox" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <children>
+            <Button mnemonicParsing="false" onAction="#close" styleClass="button-normal" text="%CLOSE_BUTTON">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="15.0" right="10.0" top="43.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+       <URL value="@../../../rec/styles/MainTemplate.css" />
+   </stylesheets>
+</GridPane>

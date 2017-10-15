@@ -1,0 +1,316 @@
+/*
+Copyright (C) 2017 mcc
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+/* 
+    Created on : Sep 6, 2017, 10:56:30 PM
+    Author     : mcc
+*/
+.root * {
+    -fx-font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+/**************************** specific styles *********************/
+
+/****************** primary scene components ***************
+*                                                          *
+***********************************************************/
+
+#pnew-button > .label,
+#pnew-button> .arrow-button,
+#opt-button{       
+    -fx-background-radius: 5;      
+    -fx-font-size: 14px;          
+    -fx-font-weight: bold;  
+    -fx-border-radius: 0;
+    -fx-border-width: 2;     
+}
+
+#pnew-button> .label{      
+    -fx-background-radius: 5 0 0 5;  
+    -fx-border-width: 2 0 2 2;
+    -fx-padding: 15 15 15 7;   
+}
+#pnew-button> .arrow-button{   
+    -fx-padding: 7;
+    -fx-background-radius: 0 5 5 0;  
+    -fx-border-width: 2 2 2 0;       
+} 
+#pnew-button{         
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-padding: 0;    
+    -fx-content-display: left;
+    -fx-text-alignment: center;
+}
+
+#opt-button{     
+    -fx-alignment: CENTER_LEFT;
+    -fx-text-alignment: left;    
+    -fx-content-display: left;
+    -fx-graphic-text-gap: 50;
+    -fx-padding: 7;
+}
+
+#about-button,
+#quick-toggle{        
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+#primary-background{        
+    -fx-background-radius: 0 0 20 20;  
+    -fx-border-radius: 0 0 11 11; 
+}
+#primary-frontground{    
+    -fx-background-radius: 0 0 11 11;
+}
+#bottom-box{       
+    -fx-background-radius: 0 0 11 11;
+}
+/**** instructor control ****/
+#instructor-label{
+    -fx-font-size: 14px;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/************************ layer control ********************
+*                                                          *
+***********************************************************/
+#opacity-bar{
+    -fx-background-radius: 20;
+}
+#layer-control{   
+    -fx-padding: 2;
+}
+#new-layer-button,
+#delete-layer-button{   
+    -fx-padding: 2;
+    -fx-background-radius: 0;   
+}
+
+/******************** properties control *******************
+*                                                          *
+***********************************************************/
+#preview-box{
+    -fx-background-image: url("../background/transparency-grid.PNG");  
+    -fx-background-repeat: repeat;
+}
+
+/******************* about scene components ****************
+*                                                          *
+***********************************************************/
+#banner-image{
+    -fx-image: url("../icons/transparentlogo/256.png");
+    -fx-effect: dropshadow( one-pass-box , rgba(0, 0, 0,0.2) , 7 , 0.1 , 5 , 5 );
+}
+
+#header-label{
+    -fx-font-size: 18;        
+}
+
+#version-label{
+    -fx-font-size: 16;           
+}
+#version-label:hover{
+    -fx-font-size: 16;     
+}
+
+#about-label{
+    -fx-wrap-text: true;
+    -fx-font-size: 14;      
+}
+
+#feature-label{
+    -fx-wrap-text: true;
+    -fx-font-size: 14;  
+    -fx-line-spacing: 0.4em;    
+}
+
+/**************************** shared styles *********************/
+
+/*************************** layer *************************
+*                                                          *
+***********************************************************/
+.layer{        
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 1 0;  
+    -fx-pref-height: 40;    
+    -fx-padding: 0 0 0 7;
+    -fx-graphic-text-gap: 7;
+}
+
+/********************** custom button **********************
+*                                                          *
+***********************************************************/
+.button-custom,
+.toggle-button{
+    -fx-content-display: graphic-only;
+    -fx-border-radius: 0 0 2 2;  
+    -fx-border-width: 1 1 2 1;  
+}
+
+.button-custom:hover,
+.toggle-button:hover{         
+    -fx-border-style: solid;        
+}
+
+/********************** scroll pane ************************
+*                                                          *
+***********************************************************/
+.scroll-pane{      
+    -fx-padding: 0;        
+    -fx-border-width: 0 1 1 1;
+}
+.scroll-pane > .corner {    
+    -fx-background-insets: 0;
+}
+.scroll-pane >.scroll-bar,
+#opacity-bar{
+    -fx-background-insets: 0;        
+}
+
+/************************ seprators ************************
+*                                                          *
+***********************************************************/
+.separator:vertical .line {    
+    -fx-border-width: 1;
+    -fx-border-insets: 0, 0 0 0 1;
+}
+.separator:horizontal .line {  
+    -fx-border-insets: 0, 1 0 0 0;
+}
+/************************ menu bar *************************
+*                                                          *
+***********************************************************/
+#capture-bar,
+.menu-bar{  
+    -fx-border-insets: 0 0 1 0,0;
+}
+
+/************************ menu items ***********************
+*                                                          *
+***********************************************************/
+.menu-item {      
+    -fx-padding: 4 7 4 22;    
+}
+.menu-item> .label{
+    -fx-padding: 0em 0.5em 0em 0.2em;
+}
+
+.radio-menu-item{      
+    -fx-padding: 4 9 4 5;      
+}
+.radio-menu-item> .left-container{      
+    -fx-padding: 10;   
+    -fx-border-radius: 3;
+    -fx-border-width: 1;
+    -fx-background-radius: 3;
+}
+/********************* button flat style *******************
+*                                                          *
+***********************************************************/
+.button-normal{
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 7 10 7 10;
+}
+/**************checkbox: toggle switch flat style***********
+*                                                          *
+***********************************************************/
+.switch-toggle> .box{  
+    -fx-border-radius: 11;
+    -fx-background-radius: 11;
+    -fx-padding: 4 15 4 15;        
+}
+
+.switch-toggle>.box >.mark{       
+    -fx-translate-x: -11;        
+    -fx-padding: 6 6 7 7;     
+    -fx-shape:"M 100, 100
+        m -75, 0
+        a 75,75 0 1,0 150,0
+        a 75,75 0 1,0 -150,0z";
+    -fx-scale-shape: false;
+    -fx-scale-x: 0.12;
+    -fx-scale-y: 0.12;
+}
+.switch-toggle:selected>.box >.mark{
+    -fx-translate-x: 11;    
+}
+/********************* radio flat style ********************
+*                                                          *
+***********************************************************/
+.radio-button> .radio{
+    -fx-border-radius: 25;
+}
+.radio-button> .radio>.dot{
+    -fx-translate-y: -1;
+}
+.radio-button:selected> .radio>.dot{
+    -fx-translate-y: 1;
+}
+
+/******************* combobox flat style *******************
+*                                                          *
+***********************************************************/
+.combo-box-popup > .list-view {
+    -fx-pref-width: 70;
+}
+.combo-box-popup > .list-view> .virtual-flow> .scroll-bar:vertical{    
+    -fx-background-insets: 0;  
+}
+
+/**************************** icons **************************************/
+
+/********************icons on capture buttons **************
+*                                                          *
+***********************************************************/
+#new-button{
+    -fx-graphic: url("/rec/icons/tools/new.png");    
+}
+#save-button{
+    -fx-graphic: url("/rec/icons/tools/save.png");    
+}
+#copy-button{
+    -fx-graphic: url("/rec/icons/tools/copy.png");    
+}
+#crop-button{
+    -fx-graphic: url(/rec/icons/tools/crop.png);    
+}
+#pen-button{
+    -fx-graphic: url(/rec/icons/tools/pen.png);    
+}
+#highlighter-button{
+    -fx-graphic: url(/rec/icons/tools/highlighter.png);    
+}
+#eraser-button{
+    -fx-graphic: url(/rec/icons/tools/eraser.png);    
+}
+#delete-layer-button{    
+    -fx-graphic: url(/rec/icons/tools/trash.png);    
+}
+#new-layer-button{    
+    -fx-graphic: url(/rec/icons/tools/new-layer.png);    
+}
+
+/********************icons on priamry buttons **************
+*                                                          *
+***********************************************************/
+#opt-button{        
+    -fx-graphic: url("/rec/icons/settings-icon.png");      
+}

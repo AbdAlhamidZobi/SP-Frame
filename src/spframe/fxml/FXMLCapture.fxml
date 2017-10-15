@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
+<VBox fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" stylesheets="@/rec/styles/MainTemplate.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spframe.SPCaptureController">             
+   <children>       
+      <MenuBar fx:id="menuBar" prefHeight="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="%CAPTURE_FILE_MENU">
+            <items>
+                  <MenuItem fx:id="newFrame" mnemonicParsing="false" onAction="#takeNewSPFrame" text="%CAPTURE_NEW">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="saveFrame" mnemonicParsing="false" onAction="#showSaveChooser" text="%CAPTURE_SAVEAS">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#closeCaptrue" text="%CAPTURE_EXIT" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="%CAPTURE_EDIT_MENU">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#copySPFrame" text="%CAPTURE_COPY">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="%CAPTURE_TOOL_MENU">
+            <items>
+                  <MenuItem fx:id="cropTool" mnemonicParsing="false" text="%CAPTURE_CROP" />
+                  <MenuItem fx:id="penTool" mnemonicParsing="false" text="%CAPTURE_PEN" />                                      
+                  <MenuItem fx:id="highTool" mnemonicParsing="false" text="%CAPTURE_HIGHLIGHTER" />
+                  <MenuItem fx:id="eraserTool" mnemonicParsing="false" text="%CAPTURE_ERASER" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="setTool" mnemonicParsing="false" onAction="#showSettings" text="%CAPTURE_SETTINGS" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="%CAPTURE_HELP_MENU">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showAboutDialog" text="%ABOUT" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      
+       <HBox id="capture-bar" alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+         <children>            
+            <Button id="new-button" fx:id="btnNew" mnemonicParsing="false" onAction="#takeNewSPFrame" styleClass="button-custom" text="%CAPTURE_NEW"> 
+                <tooltip>
+                    <Tooltip text="%CAPTURE_NEW" x="55" />
+                </tooltip> 
+            </Button>
+            <Button id="save-button" fx:id="btnSave" mnemonicParsing="false" onAction="#showSaveChooser" styleClass="button-custom" text="%CAPTURE_SAVEAS">
+                <tooltip>
+                    <Tooltip text="%CAPTURE_SAVEAS" />
+                </tooltip> 
+            </Button>
+            <Button id="copy-button" fx:id="btnCopy" mnemonicParsing="false" onAction="#copySPFrame" styleClass="button-custom" text="%CAPTURE_COPY">
+                <tooltip>
+                    <Tooltip text="%CAPTURE_COPY" />
+                </tooltip> 
+            </Button>
+            <Separator orientation="VERTICAL" prefHeight="0.0" />
+            <ToggleButton id="crop-button" fx:id="btnCrop" mnemonicParsing="false" text="%CAPTURE_CROP">
+                 <toggleGroup>
+                        <ToggleGroup fx:id="btnBarGroup" />
+                </toggleGroup>
+                <tooltip>
+                    <Tooltip text="%CAPTURE_CROP" />
+                </tooltip> 
+            </ToggleButton>               
+            <ToggleButton id="pen-button" fx:id="btnPen" mnemonicParsing="false" text="%CAPTURE_PEN" toggleGroup="$btnBarGroup">               
+               <tooltip>
+                    <Tooltip text="%CAPTURE_PEN" />
+               </tooltip>              
+            </ToggleButton>
+            <ToggleButton id="highlighter-button" fx:id="btnHighlight" mnemonicParsing="false" text="%CAPTURE_HIGHLIGHTER" toggleGroup="$btnBarGroup">
+                <tooltip>
+                    <Tooltip text="%CAPTURE_HIGHLIGHTER" />
+                </tooltip> 
+            </ToggleButton>   
+            <ToggleButton id="eraser-button" fx:id="btnEraser" mnemonicParsing="false" text="%CAPTURE_ERASER" toggleGroup="$btnBarGroup">
+                <tooltip>
+                    <Tooltip text="%CAPTURE_ERASER" />
+                </tooltip> 
+            </ToggleButton>   
+        </children>
+         <padding>
+            <Insets bottom="0.2" />
+         </padding>
+      </HBox>
+      <HBox fx:id="workshopHbox">
+         <children>   
+            <ScrollPane id="scroll-pane" fx:id="imgScrollPane" pickOnBounds="false">
+               <content>
+                  <StackPane id="stack-pane" fx:id="layersPane">
+                     <children>
+                        <Pane id="capture-viewport">
+                           <children>
+                              <Pane fx:id="imgViewPane">
+                                 <children>
+                                    <ImageView fx:id="imageView" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </StackPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu fx:id="shortcutMenu">
+                     <items>
+                        <MenuItem fx:id="copyShortcut" mnemonicParsing="false" onAction="#copySPFrame" text="%CAPTURE_COPY" />
+                        <MenuItem fx:id="saveShortcut" mnemonicParsing="false" onAction="#showSaveChooser" text="%CAPTURE_SAVEAS" />
+                        <MenuItem fx:id="setShortcut" mnemonicParsing="false" onAction="#showSettings" text="%CAPTURE_SETTINGS" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </ScrollPane>
+            <VBox pickOnBounds="false" prefWidth="200.0">
+               <children>
+                  <TitledPane fx:id="prosBox" animated="false" collapsible="false" prefHeight="200.0" prefWidth="190.0" styleClass="side-box" VBox.vgrow="ALWAYS">
+                     <content>
+                        <ScrollPane fx:id="prosScroll" fitToHeight="true" hbarPolicy="NEVER" prefViewportHeight="174.0" prefViewportWidth="220.0">
+                           <content>
+                              <StackPane>
+                                 <children>
+                                    <Label id="property-label" fx:id="prosLabel" />
+                                    <GridPane fx:id="prosGrid">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="59.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="141.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" vgrow="ALWAYS" />
+                                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="ALWAYS" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="5.0" vgrow="ALWAYS" />
+                                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="80.0" vgrow="ALWAYS" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label fx:id="colorLabel" styleClass="label-custom" text="%CAPTURE_PROPERTIES_COLOR" GridPane.halignment="RIGHT">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" top="10.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label styleClass="label-custom" text="%CAPTURE_PROPERTIES_SIZE" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="15.0" />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <ComboBox fx:id="sizeBox" prefWidth="70.0" visibleRowCount="6" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                                          <VBox fillWidth="false" prefHeight="80.0" prefWidth="100.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                                             <children>
+                                                <Label styleClass="label-custom" text="%CAPTURE_PROPERTIES_PREVIEW">
+                                                   <VBox.margin>
+                                                      <Insets left="4.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Pane id="preview-box" fx:id="previewPane" prefHeight="50.0" prefWidth="170.0">
+                                                   <VBox.margin>
+                                                      <Insets left="10.0" right="20.0" top="2.0" />
+                                                   </VBox.margin>
+                                                </Pane>
+                                             </children>
+                                             <GridPane.margin>
+                                                <Insets left="2.0" top="3.0" />
+                                             </GridPane.margin>
+                                          </VBox>
+                                          <Separator prefWidth="200.0" styleClass="separator-dark" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                             <padding>
+                                                <Insets top="5.0" />
+                                             </padding>
+                                          </Separator>
+                                          <ColorPicker fx:id="colorBox" maxWidth="-Infinity" prefWidth="45.0" GridPane.columnIndex="1" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="2.0" />
+                                       </padding>
+                                    </GridPane>
+                                 </children>
+                              </StackPane>
+                           </content>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </ScrollPane>
+                     </content></TitledPane>
+                  <TitledPane fx:id="layerBox" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" prefWidth="190.0" styleClass="side-box" text="%CAPTURE_LAYER_TITLE" VBox.vgrow="ALWAYS">
+                     <content>
+                        <ScrollPane id="layer-scroll" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <VBox id="layer-list" fx:id="layerList" prefWidth="190.0" />
+                           </content></ScrollPane>
+                     </content></TitledPane>
+                  <HBox id="layer-control" fx:id="layerControl" alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="1.0">
+                     <children>
+                        <ScrollBar id="opacity-bar" unitIncrement="0.0">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <tooltip>
+                                <Tooltip text="%CAPTURE_LAYER_OPACITY" />
+                           </tooltip> 
+                        </ScrollBar>
+                        <Label id="opacity-label" alignment="CENTER" prefWidth="35.0" text="100%">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets right="2.0" />
+                           </padding></Label>
+                        <Button id="new-layer-button" mnemonicParsing="false" styleClass="button-normal">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <tooltip>
+                                <Tooltip text="%CAPTURE_LAYER_NEW" />
+                           </tooltip> 
+                        </Button>
+                        <Button id="delete-layer-button" mnemonicParsing="false" styleClass="button-normal">
+                            <tooltip>
+                                <Tooltip text="%CAPTURE_LAYER_DELETE" />
+                           </tooltip> 
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+    
+   </children>  
+</VBox>

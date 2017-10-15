@@ -1,0 +1,253 @@
+/**
+Copyright (C) 2017 mcc
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+/* 
+    Created on : Aug 29, 2017, 12:35:05 AM
+    Author     : mcc
+*/
+/******************* frequently used colors ****************
+*                                                          *
+***********************************************************/
+* {
+    -fx-light-text-fill:#373737;
+    -fx-light-border: rgb(210,215,218);
+    -fx-light-background:#eee;
+    -fx-light-showbackground:lightgray;
+}
+
+/******************* toggle,normal button ******************
+*                                                          *
+***********************************************************/
+#pnew-button,
+.button-custom,
+.toggle-button{          
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;   
+}
+.toggle-button:selected{        
+    -fx-background-color: lightgray;    
+}
+.button-normal{
+    -fx-text-fill: -fx-light-text-fill;
+    -fx-background-color: -fx-light-showbackground;
+}
+#about-button,
+#quick-toggle{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;    
+}
+
+/******************* layer control buttons *****************
+*                                                          *
+***********************************************************/
+#new-layer-button >.image-view,  
+#delete-layer-button > .image-view{        
+    -fx-effect: innershadow(one-pass-box,#808080 ,100 , 0 , 0 , 0 );     
+}
+#new-layer-button:hover >.image-view,  
+#delete-layer-button:hover > .image-view{      
+    -fx-effect: innershadow(one-pass-box,white ,100 , 0 , 0 , 0 );     
+}
+
+/****************** toggle-like components *****************
+*                                                          *
+***********************************************************/
+.switch-toggle{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-inner-border: transparent;    
+    -fx-body-color: transparent;    
+}
+.radio-button> .radio,
+.switch-toggle> .box{
+    -fx-border-color: white;   
+    -fx-background-color: -fx-light-showbackground;
+}
+.radio-button> .radio >.dot,
+.switch-toggle>.box >.mark{       
+    -fx-background-color: whitesmoke;     
+}
+.radio-button> .radio:hover >.dot,
+.switch-toggle>.box:hover >.mark{
+    -fx-background-color: white   
+}
+
+/****************** combo-like components ******************
+*                                                          *
+***********************************************************/
+.choice-box,
+.combo-box,
+.color-picker,
+#layer-control{
+    -fx-background-color:-fx-light-showbackground;
+}
+.color-picker{
+    -fx-color-label-visible:false;
+}
+.combo-box-popup> .list-view,
+.combo-box-popup> .list-view> .virtual-flow> .clipped-container> .sheet> .list-cell{
+    -fx-background-color: -fx-light-background;
+}
+.combo-box-popup> .list-view> .virtual-flow> .clipped-container> .sheet> .list-cell,
+.combo-box-popup> .list-view> .placeholder> .label {
+    -fx-text-fill: -fx-light-text-fill;
+}
+
+/************************ same-style ************************
+*                                                          *
+***********************************************************/
+.titled-pane,
+.combo-box> .list-cell,
+.choice-box> .label,
+.color-picker> .color-picker-label,
+.radio-button,
+.switch-toggle,
+.label-custom,
+#opacity-label,
+#property-label,
+.layer{
+    -fx-text-fill: -fx-light-text-fill;
+}
+
+/************************ menu bars ************************
+*                                                          *
+***********************************************************/
+#capture-bar,
+.menu-bar{        
+    -fx-background-color: -fx-light-background;
+    -fx-border-color: transparent transparent -fx-shadow-highlight-color transparent,
+        transparent transparent -fx-text-box-border transparent ;
+}
+.menu-bar{
+    -fx-border-color: transparent transparent -fx-light-border transparent;          
+}
+.menu-bar > .container > .menu-button > .label{  
+    -fx-text-fill: -fx-light-text-fill;
+}
+.menu-bar > .container > .menu-button:showing > .label,
+.menu-bar > .container > .menu-button:hover > .label,
+.menu-bar > .container > .menu-button:focused > .label{  
+    -fx-text-fill: whitesmoke;
+}
+/************************* layer ***************************
+*                                                          *
+***********************************************************/
+.layer{    
+    -fx-border-color: transparent transparent -fx-light-border transparent;
+    -fx-background-color: -fx-light-showbackground;    
+}
+
+/****************** background panes ***********************
+*                                                          *
+***********************************************************/
+#capture-viewport{
+    -fx-background-color: #e0e0e0;
+}
+#main-pane,
+#layer-list,
+.side-box,
+.scroll-pane > .viewport{
+    -fx-background-color:-fx-light-background;    
+}
+
+/******************** titled pane **************************
+*                                                          *
+***********************************************************/
+.titled-pane > .title {
+    -fx-background-color:
+        linear-gradient(to bottom,
+            derive(-fx-light-background,-15%) 95%,
+            derive(-fx-light-showbackground,-25%) 100%
+        );    
+}
+.titled-pane > *.content {
+    -fx-border-color: -fx-light-border;    
+    -fx-background-color: linear-gradient(from 0px 0px to 0px 5px, derive(-fx-light-background, -6%), -fx-light-background);
+}
+
+/******************* scroll pane,bar ***********************
+*                                                          *
+***********************************************************/
+.scroll-pane{  
+    -fx-focus-color: transparent;
+    -fx-border-color: -fx-light-border;
+}
+.scroll-pane > .corner {
+    -fx-background-color: -fx-light-background;
+}
+#opacity-bar,
+.scroll-pane >.scroll-bar,
+.combo-box-popup > .list-view> .virtual-flow> .scroll-bar:vertical{   
+    -fx-background-color:  -fx-light-background;
+    -fx-border-color: transparent;        
+}
+#opacity-bar> .thumb,
+.scroll-pane> .scroll-bar> .thumb,
+.combo-box-popup > .list-view> .virtual-flow> .scroll-bar:vertical> .thumb{
+    -fx-background-color: -fx-light-showbackground;   
+}
+#opacity-bar>.thumb:hover,
+.scroll-pane >.scroll-bar >.thumb:hover,
+.combo-box-popup > .list-view> .virtual-flow> .scroll-bar:vertical> .thumb:hover{
+    -fx-background-color: #c1c1c1;    
+}
+.scroll-pane >.scroll-bar >.decrement-button,
+.scroll-pane >.scroll-bar >.increment-button,
+.combo-box-popup > .list-view> .virtual-flow> .scroll-bar:vertical> .decrement-button,
+.combo-box-popup > .list-view> .virtual-flow> .scroll-bar:vertical> .increment-button{
+    -fx-background-color: transparent;    
+}
+#opacity-bar >.decrement-button,
+#opacity-bar >.increment-button,
+#opacity-bar >.decrement-button >.decrement-arrow,
+#opacity-bar >.increment-button >.increment-arrow{
+    -fx-background-color: transparent;    
+}
+
+/******************** primary scene ************************
+*                                                          *
+***********************************************************/
+#primary-background{
+    -fx-background-color: transparent;
+}
+#primary-back-pane{    
+    -fx-border-radius: 5 5 12 12;
+    -fx-background-radius: 5 5 12 12;
+    -fx-background-color:transparent;    
+}
+
+/********************* instructor **************************
+*                                                          *
+***********************************************************/
+#instructor-label{
+    -fx-text-fill:#e7e4e6;
+    -fx-background-color: rgba(83, 83, 83,0.5);     
+    -fx-effect: dropshadow( one-pass-box ,rgba(83, 83, 83,0.2) , 50, 0.5 , 0 , 20);
+}
+#instructor-tri{
+    -fx-fill: linear-gradient(to bottom right,rgba(83, 83, 83,0.5) 50%,
+                              rgba(83, 83, 83,0.0) 0% );
+}
+
+/********************* about scene *************************
+*                                                          *
+***********************************************************/
+#version-label{   
+    -fx-text-fill: #999999;
+}
+#version-label:hover{   
+    -fx-text-fill: #666666;
+}

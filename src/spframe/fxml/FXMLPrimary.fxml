@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="primary-background" fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spframe.SPPrimaryController">    
+   <children>      
+      <ImageView fx:id="backImageView" fitHeight="270.0" fitWidth="312.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="270.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ImageView id= "logo-image-view" fx:id="logoImageView" fitHeight="150.0" fitWidth="150.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="40.0" />
+      <AnchorPane id="primary-foreground" fx:id="foregroundPane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="312.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="225.0">
+         <children>
+            <SplitMenuButton id="pnew-button" fx:id="btnNew" mnemonicParsing="false" popupSide="RIGHT" text="%PRIMARY_TAKESECREENSHOT_BUTTON" textAlignment="CENTER" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="70.0">  
+                <items>
+                    <RadioMenuItem mnemonicParsing="false" text="%PRIMARY_RECTANGULAR_ITEM">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="takeWayGroup" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                    <RadioMenuItem mnemonicParsing="false" text="%PRIMARY_DRAWSHAPE_ITEM" toggleGroup="$takeWayGroup" />
+                    <RadioMenuItem mnemonicParsing="false" text="%PRIMARY_FULLSCREEN_ITEM" toggleGroup="$takeWayGroup" />
+                </items>     
+            </SplitMenuButton>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="125.0" />
+            <Button id="opt-button" fx:id="btnOption" mnemonicParsing="false" onAction="#showSettings" text="%PRIMARY_SETTINGS_BUTTON" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="150.0" />
+            <Pane id="instructor-background" fx:id="instrcPane" mouseTransparent="true" visible="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="130.0">
+               <children>
+                  <Rectangle id="instructor-tri" arcHeight="5.0" arcWidth="5.0" fill="#50555980" height="20.0" layoutX="131.0" rotate="45.0" stroke="#ffffff00" strokeType="INSIDE" width="20.0" />
+                  <Label id="instructor-label" fx:id="instrcLabel" alignment="TOP_LEFT" layoutY="10.0" prefWidth="272.0" styleClass="label-custom" text="%INSTRUCTOR_RECTUNGULAR_MESSAGE" wrapText="true">
+                     <padding>
+                        <Insets bottom="8.0" left="10.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+            <HBox id="bottom-box" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="220.0">
+               <children>
+                  <CheckBox id="quick-toggle" fx:id="quickCheck" maxWidth="-Infinity" mnemonicParsing="false" prefWidth="240.0" styleClass="switch-toggle" text="%PRIMARY_QUICK_SCREENSHOT" textFill="WHITE" HBox.hgrow="NEVER">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <Button id="about-button" fx:id="btnAbout" mnemonicParsing="false" onAction="#showAboutDialog" text="%ABOUT" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="5.0" top="7.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>      
+   </children>
+   <stylesheets>
+      <URL value="@../../../rec/styles/MainTemplate.css" />      
+   </stylesheets>   
+</AnchorPane>
