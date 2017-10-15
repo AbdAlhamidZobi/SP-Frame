@@ -106,6 +106,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -fx-text-fill: -fx-light-text-fill;
 }
 
+/****************** label-like components ******************
+*                                                          *
+***********************************************************/
+.hyperlink,
+.hyperlink:armed,
+.hyperlink:hover:armed,
+.hyperlink:hover,
+.hyperlink:hover:visited {
+    -fx-text-fill: -fx-light-text-fill; 
+}
+
 /************************ same-style ************************
 *                                                          *
 ***********************************************************/
@@ -250,8 +261,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 }
 #version-label:hover{   
     -fx-text-fill: #666666;
-}
-#about-lower-box{
-    -fx-background-color: linear-gradient(to bottom,-fx-light-background 50%,
-                                                    -fx-light-showbackground 100%);
 }

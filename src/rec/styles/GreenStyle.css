@@ -73,6 +73,20 @@
     -fx-background-color: rgba(21, 153, 127,1.0);                  
 }
 
+/****************** label-like components ******************
+*                                                          *
+***********************************************************/
+.hyperlink,
+.hyperlink:visited{
+    -fx-text-fill: rgba(21, 153, 127,0.75); 
+}
+.hyperlink{
+    -fx-border-color: transparent;
+}
+.hyperlink:focused {
+    -fx-border-color: rgba(21, 153, 127,0.75);  
+}
+
 /************************ same-style ************************
 *                                                          *
 ***********************************************************/
