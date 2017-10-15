@@ -1,7 +1,7 @@
 # SP-Frame
 Simple Purpose Frame or (SP Frame) is a simple app for taking screenshots based on javafx API it's main features are : custom window look, simplicity &amp; customization 
 
-Table of content:
+# Table of content:
 src/
   the main folder.
 src/spframe
@@ -12,4 +12,4 @@ src/rec
 this project is under the GNU3 licence for more read "" 
 
 the program was and still being created by me:
-# Abd Alhamid Zobi
+## Abd Alhamid Zobi
