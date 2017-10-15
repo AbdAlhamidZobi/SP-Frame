@@ -113,6 +113,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -fx-text-fill: -fx-dark-text-fill;
 }
 
+/****************** label-like components ******************
+*                                                          *
+***********************************************************/
+.hyperlink,
+.hyperlink:armed,
+.hyperlink:hover:armed,
+.hyperlink:hover,
+.hyperlink:hover:visited {
+    -fx-text-fill: -fx-dark-text-fill; 
+}
+
 /************************ same-style ************************
 *                                                          *
 ***********************************************************/
@@ -245,9 +256,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -fx-background-color: transparent;    
 }
 
-/********************* instructor **************************
-*                                                          *
-***********************************************************/
+/***** instructor ***********/
 #instructor-label{
     -fx-background-color: rgba(83, 83, 83,0.5);     
     -fx-effect: dropshadow( one-pass-box ,rgba(83, 83, 83,0.2) , 50, 0.5 , 0 , 20);
@@ -260,11 +269,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /********************* about scene *************************
 *                                                          *
 ***********************************************************/
+#about-header-label{
+    -fx-text-fill: -fx-dark-text-fill;
+}
 #version-label{   
-    -fx-text-fill: #999999;
+    -fx-text-fill: #7a7a7a;
 }
 #version-label:hover{   
-    -fx-text-fill: #666666;
+    -fx-text-fill: #a0a0a0;
 }
 
 

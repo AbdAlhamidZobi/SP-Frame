@@ -3,9 +3,15 @@ package spframe;
 
 import java.io.IOException;
 import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.stage.Stage;
 
-public class SPMain extends Application {     
+public class SPMain extends Application {  
+    private static HostServices hostService;
+    
+    public static HostServices getAppHostServices(){
+        return hostService;
+    }
                    
     public static void main(String[] args){               
         launch(args);
@@ -14,12 +20,13 @@ public class SPMain extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {    
         System.setProperty("prism.text", "t2k");
-        System.setProperty("prism.lcdtext", "false");         
+        System.setProperty("prism.lcdtext", "false");   
+        hostService = getHostServices();
         SPSettings.initialize(); 
         SPShooter.initialize();
         SPPrimary.initialize();
         SPCapture.initialize();   
         SPAbout.initialize();   
-        SPSaver.initialize();
+        SPSaver.initialize();        
     }    
 }
