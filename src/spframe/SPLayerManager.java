@@ -44,8 +44,9 @@ public class SPLayerManager{
     private final String namePrefix;
     private final ScrollBar opactiyBar;
     private final Label opacityLabel;    
-    private final Button newButton;
-    private final Button delButton;
+    private final Button newButton,delButton;
+    private int lastLayerNumber = -1;
+    
         
     public SPLayerManager(Pane layersPane, ObservableList<Node> controles,
                                 VBox layerList,String namePrefix){        
@@ -78,7 +79,7 @@ public class SPLayerManager{
     
     public void addLayer(String type,double x,double y,
             double width,double height){
-        SPLayer newLayer = new SPLayer(this.namePrefix+" "+this.layers.size(), type,                
+        SPLayer newLayer = new SPLayer(generateLayerName(), type,                
                 new WritableImage(40, 40), new Pane(), x, y, width, height);
         this.layers.add(newLayer);        
         this.layerList.getChildren().add(newLayer);
@@ -157,6 +158,11 @@ public class SPLayerManager{
     
     public ObservableList<SPLayer> getLayers(){
         return this.layers;
+    }
+    
+    private String generateLayerName(){
+        lastLayerNumber++;
+        return this.namePrefix +" "+ this.lastLayerNumber;        
     }
         
     private void setLayerOpacity(double opacity){ 
