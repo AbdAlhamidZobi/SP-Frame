@@ -1,3 +1,8 @@
+/**************************** shared styles *********************/
+
+/******************* toggle,normal button ******************
+*                                                          *
+***********************************************************/
 .button-custom:hover > .image-view, 
 .toggle-button:hover > .image-view{
      -fx-effect: dropshadow( one-pass-box , rgba(244, 117, 19,0.35) , 7 , 0.1 , 5 , 5 );
@@ -14,18 +19,19 @@
     -fx-background-color: rgba(244, 117, 19,0.75);   
 }
 
+/************************ menu bars ************************
+*                                                          *
+***********************************************************/
 .menu-bar > .container > .menu-button:hover,
 .menu-bar > .container > .menu-button:focused,
 .menu-bar > .container > .menu-button:showing {    
     -fx-text-fill: white;
     -fx-background-color: rgba(244, 117, 19,1);
 }
-.menu-item:hover,
-.menu-item:focused{
-    -fx-text-fill: #999999;    
-    -fx-background-color: rgba(244, 117, 19,0.5);    
-}
 
+/********************** menu item-like**********************
+*                                                          *
+***********************************************************/
 .combo-box-popup  > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover,
 .combo-box-popup  > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
     -fx-background-color: rgba(244, 117, 19,0.178);
@@ -45,7 +51,15 @@
 .radio-menu-item:checked:focused> .left-container> .radio{        
     -fx-background-color: rgba(255, 255, 255,0.5);   
 }
+.menu-item:hover,
+.menu-item:focused{
+    -fx-text-fill: #999999;    
+    -fx-background-color: rgba(244, 117, 19,0.5);    
+}
 
+/****************** toggle-like components *****************
+*                                                          *
+***********************************************************/
 .radio-button:selected>.radio >.dot,
 .switch-toggle:selected>.box >.mark{
     -fx-background-color: rgba(244, 117, 19,0.75);               
@@ -59,7 +73,43 @@
     -fx-background-color: rgba(244, 117, 19,1.0);                         
 }
 
+/****************** label-like components ******************
+*                                                          *
+***********************************************************/
+.hyperlink,
+.hyperlink:visited{
+    -fx-text-fill: rgba(244, 117, 19,0.75);    
+}
+/************************ same-style ************************
+*                                                          *
+***********************************************************/
+.choice-box:hover,
+.combo-box:hover,
+.color-picker:hover,
+.choice-box:showing,
+.combo-box:showing,
+.color-picker:showing,
+.layer:selected{ 
+    -fx-background-color: rgba(244, 117, 19,0.5);   
+}
 
+/**************************** specific styles *********************/
+
+/****************** shooter scene components ***************
+*                                                          *
+***********************************************************/
+#crop-rectangle,#crop-path{
+    -fx-stroke:rgba(244, 117, 19,1.0);
+    -fx-stroke-width:1;
+    -fx-fill: rgba(244, 117, 19,0.2);
+    -fx-stroke-line-cap:round;    
+}
+
+/****************** primary scene components ***************
+*                                                          *
+***********************************************************/
+
+/* quick toggle */
 #quick-toggle>.box{
     -fx-border-color: transparent;
     -fx-background-color: rgba(224, 108, 20,1);              
@@ -71,7 +121,6 @@
 #quick-toggle>.box:hover >.mark{
     -fx-background-color: whitesmoke;      
 }
-
 #quick-toggle:selected> .box> .mark{
     -fx-background-color: rgba(255, 151, 71,0.45);    
 }
@@ -82,23 +131,7 @@
     -fx-background-color: rgb(249, 183, 132)
 }
 
-.choice-box:hover,
-.combo-box:hover,
-.color-picker:hover,
-.choice-box:showing,
-.combo-box:showing,
-.color-picker:showing,
-.layer:selected{
-    -fx-background-color: rgba(244, 117, 19,0.5);   
-}
-
-#crop-rectangle,#crop-path{
-    -fx-stroke:rgba(244, 117, 19,1.0);
-    -fx-stroke-width:1;
-    -fx-fill: rgba(244, 117, 19,0.2);
-    -fx-stroke-line-cap:round;    
-}
-
+/* about button & quick toggle */
 #about-button,
 #quick-toggle{     
     -fx-text-fill: rgba(247, 246, 244,0.7);
@@ -109,6 +142,7 @@
     -fx-text-fill: rgba(247, 246, 244,1);
 }
 
+/* new & settings buttons */
 #pnew-button >.label,
 #pnew-button >.arrow-button,
 #opt-button{       
@@ -149,6 +183,7 @@
     -fx-effect: dropshadow( one-pass-box , rgba(219, 110, 18,0.2) , 7 , 0.1 , 0 , 6 );
 }    
 
+/* panes */
 #primary-foreground{   
     -fx-background-image: url(../background/orange-foreground.png);
     -fx-background-position: bottom;

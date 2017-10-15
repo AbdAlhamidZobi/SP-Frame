@@ -240,9 +240,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -fx-background-color:transparent;    
 }
 
-/********************* instructor **************************
-*                                                          *
-***********************************************************/
+/***** instructor ***********/
 #instructor-label{
     -fx-text-fill:#e7e4e6;
     -fx-background-color: rgba(83, 83, 83,0.5);     

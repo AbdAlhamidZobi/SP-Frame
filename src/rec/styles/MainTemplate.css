@@ -96,17 +96,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -fx-effect: dropshadow( one-pass-box , rgba(0, 0, 0,0.2) , 7 , 0.1 , 5 , 5 );
 }
 
-#header-label{
+#about-header-label{
     -fx-font-size: 18;        
 }
-
 #version-label{
     -fx-font-size: 16;           
 }
-#version-label:hover{
-    -fx-font-size: 16;     
-}
-
 #about-label{    
     -fx-font-size: 14;      
 }
@@ -140,14 +135,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *                                                          *
 ***********************************************************/
 .hyperlink{
-    -fx-border-width: 0 0 0 2px;
+    -fx-border-width: 0;
     -fx-border-style: solid;
 }
 .hyperlink:hover,
-.hyperlink:visited,
 .hyperlink:hover:visited {
-    -fx-underline: false;
+    -fx-underline: true;
 }
+.hyperlink:visited,
 .hyperlink:visited:armed {
     -fx-underline: false;
 }

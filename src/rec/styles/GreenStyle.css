@@ -80,13 +80,6 @@
 .hyperlink:visited{
     -fx-text-fill: rgba(21, 153, 127,0.75); 
 }
-.hyperlink{
-    -fx-border-color: transparent;
-}
-.hyperlink:focused {
-    -fx-border-color: rgba(21, 153, 127,0.75);  
-}
-
 /************************ same-style ************************
 *                                                          *
 ***********************************************************/
@@ -110,10 +103,6 @@
     -fx-stroke-width:1;
     -fx-fill: rgba(26, 188, 156,0.2);
     -fx-stroke-line-cap:round;
-}
-
-#instructor-background{
-    /*-fx-border-color: rgba(21, 153, 127,0.75);  */
 }
 
 /****************** primary scene components ***************
