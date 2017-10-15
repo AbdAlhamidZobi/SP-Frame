@@ -251,3 +251,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #version-label:hover{   
     -fx-text-fill: #666666;
 }
+#about-lower-box{
+    -fx-background-color: linear-gradient(to bottom,-fx-light-background 50%,
+                                                    -fx-light-showbackground 100%);
+}
