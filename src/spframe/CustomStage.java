@@ -308,7 +308,7 @@ public class CustomStage extends Stage{
                         this.startMoveY = getY() - value.getScreenY();
                         backPane.setCursor(Cursor.N_RESIZE);  
                         setResizeType("north");                        
-                    }else if(mouseY <= (stageMaxY+6) && mouseY >= (stageMaxY-6)){
+                    }else if(mouseY <= (stageMaxY+6) && mouseY >= (stageMaxY-4)){
                         backPane.setCursor(Cursor.S_RESIZE);
                         setResizeType("south");    
                     }
