@@ -88,6 +88,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -fx-background-radius: 5;
 }
 
+/******************* about scene components ****************
+*                                                          *
+***********************************************************/
+#banner-image{
+    -fx-image: url("../icons/transparentlogo/256.png");
+    -fx-effect: dropshadow( one-pass-box , rgba(0, 0, 0,0.2) , 7 , 0.1 , 5 , 5 );
+}
+
+#header-label{
+    -fx-font-size: 18;        
+}
+
+#version-label{
+    -fx-font-size: 16;           
+}
+#version-label:hover{
+    -fx-font-size: 16;     
+}
+
+#about-label{    
+    -fx-font-size: 14;      
+}
+
 /************************ layer control ********************
 *                                                          *
 ***********************************************************/
@@ -111,37 +134,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -fx-background-repeat: repeat;
 }
 
-/******************* about scene components ****************
+/**************************** shared styles *********************/
+
+/************************ hyperlink ************************
 *                                                          *
 ***********************************************************/
-#banner-image{
-    -fx-image: url("../icons/transparentlogo/256.png");
-    -fx-effect: dropshadow( one-pass-box , rgba(0, 0, 0,0.2) , 7 , 0.1 , 5 , 5 );
+.hyperlink{
+    -fx-border-width: 0 0 0 2px;
+    -fx-border-style: solid;
 }
-
-#header-label{
-    -fx-font-size: 18;        
+.hyperlink:hover,
+.hyperlink:visited,
+.hyperlink:hover:visited {
+    -fx-underline: false;
 }
-
-#version-label{
-    -fx-font-size: 16;           
+.hyperlink:visited:armed {
+    -fx-underline: false;
 }
-#version-label:hover{
-    -fx-font-size: 16;     
-}
-
-#about-label{
-    -fx-wrap-text: true;
-    -fx-font-size: 14;      
-}
-
-#feature-label{
-    -fx-wrap-text: true;
-    -fx-font-size: 14;  
-    -fx-line-spacing: 0.4em;    
-}
-
-/**************************** shared styles *********************/
 
 /*************************** layer *************************
 *                                                          *
@@ -152,6 +161,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -fx-pref-height: 40;    
     -fx-padding: 0 0 0 7;
     -fx-graphic-text-gap: 7;
+}
+
+/********************* button flat style *******************
+*                                                          *
+***********************************************************/
+.button-normal{
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 7 10 7 10;
 }
 
 /********************** custom button **********************
@@ -221,14 +239,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -fx-border-width: 1;
     -fx-background-radius: 3;
 }
-/********************* button flat style *******************
-*                                                          *
-***********************************************************/
-.button-normal{
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-padding: 7 10 7 10;
-}
+
 /**************checkbox: toggle switch flat style***********
 *                                                          *
 ***********************************************************/

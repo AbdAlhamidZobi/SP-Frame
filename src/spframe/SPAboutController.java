@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.geometry.NodeOrientation;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
@@ -22,9 +23,9 @@ public class SPAboutController implements SPCustomizable{
     
     private CustomStage windowManager;
     @FXML private ResourceBundle resources;
-    @FXML private GridPane mainPane;
-    @FXML private HBox lowerBox;
+    @FXML private GridPane mainPane;   
     @FXML private Label verLabel;
+    @FXML private Hyperlink visitProfileLink;
     
     public SPAboutController(){      
     }
@@ -41,7 +42,8 @@ public class SPAboutController implements SPCustomizable{
                                           new Image("/rec/icons/transparentlogo/32.png"),
                                           new Image("/rec/icons/transparentlogo/24.png"),
                                           new Image("/rec/icons/transparentlogo/16.png")); 
-        this.verLabel.setText("1.0a");
+        this.verLabel.setText("1.0");
+        
         this.applyTheme(SPSettings.getThemePath());        
         this.setNightModeEnabled(SPSettings.getNightMode());
         String usedOrie = this.resources.getString("NODE_ORIENTATION");        
@@ -72,10 +74,6 @@ public class SPAboutController implements SPCustomizable{
         this.windowManager.show();
     }    
         
-    @FXML private void close(){
-        this.windowManager.close();
-    } 
-    
     @Override
     public void setDataKeeperDetails() {}
 
