@@ -19,12 +19,12 @@ public class SPAbout {
     
     protected static void initialize() throws IOException{
          Locale toUseLocale = new Locale.Builder().setLanguage(SPSettings.getLanguageString()).
-                        setScript("Arab").build();         ;
+                        setScript("Arab").build();         
          initialize(toUseLocale);                        
      }
      
     protected static void initialize(Locale toUseLocale) throws IOException{                         
-        FXMLLoader loader = new FXMLLoader(SPAbout.class.getResource("/spframe/fxml/FXMLAbout.fxml"));                                
+        FXMLLoader loader = new FXMLLoader(SPAbout.class.getResource("/rec/fxml/FXMLAbout.fxml"));                                
         loader.setResources(ResourceBundle.getBundle("rec.language.spframe",toUseLocale));        
         loader.load();        
         controller = loader.getController();            

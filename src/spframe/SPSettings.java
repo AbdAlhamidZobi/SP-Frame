@@ -22,7 +22,7 @@ public class SPSettings {
         boolean useDataKeeper = false;
         if(controller!= null)
             useDataKeeper = true;     
-        FXMLLoader FXLoader = new FXMLLoader(SPSettings.class.getResource("/spframe/fxml/FXMLSettings.fxml"));                 
+        FXMLLoader FXLoader = new FXMLLoader(SPSettings.class.getResource("/rec/fxml/FXMLSettings.fxml"));                 
         FXLoader.setResources(ResourceBundle.getBundle("rec.language.spframe",toUseLocale));  
         FXLoader.load(); 
         controller = FXLoader.getController();  

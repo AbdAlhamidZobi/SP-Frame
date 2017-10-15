@@ -19,7 +19,7 @@ public class SPPrimary {
         if(controller!= null)
             useDataKeeper = true;                
         ResourceBundle bundle = ResourceBundle.getBundle("rec.language.spframe",toUseLocale);
-        FXMLLoader PrimaryLoader = new FXMLLoader(SPPrimary.class.getResource("/spframe/fxml/FXMLPrimary.fxml"),bundle);                                        
+        FXMLLoader PrimaryLoader = new FXMLLoader(SPPrimary.class.getResource("/rec/fxml/FXMLPrimary.fxml"),bundle);                                        
         PrimaryLoader.load();        
         controller = PrimaryLoader.getController();    
         if(useDataKeeper)

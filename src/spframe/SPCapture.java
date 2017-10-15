@@ -20,7 +20,7 @@ public class SPCapture {
         boolean useDataKeeper = false;
         if(controller != null)
             useDataKeeper = true;
-        FXMLLoader loader = new FXMLLoader(SPCapture.class.getResource("/spframe/fxml/FXMLCapture.fxml"));        
+        FXMLLoader loader = new FXMLLoader(SPCapture.class.getResource("/rec/fxml/FXMLCapture.fxml"));        
         loader.setResources(ResourceBundle.getBundle("rec.language.spframe",toUseLocale));                     
         loader.load();
         controller = loader.getController();  
