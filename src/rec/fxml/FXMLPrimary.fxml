@@ -13,7 +13,7 @@
 <AnchorPane id="primary-background" fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spframe.SPPrimaryController">    
    <children>      
       <ImageView fx:id="backImageView" fitHeight="270.0" fitWidth="312.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="270.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <ImageView id= "logo-image-view" fx:id="logoImageView" fitHeight="150.0" fitWidth="150.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="40.0" />
+      <ImageView id="logo-image-view" fx:id="logoImageView" fitHeight="150.0" fitWidth="150.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="40.0" />
       <AnchorPane id="primary-foreground" fx:id="foregroundPane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="312.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="225.0">
          <children>
             <SplitMenuButton id="pnew-button" fx:id="btnNew" mnemonicParsing="false" popupSide="RIGHT" text="%PRIMARY_TAKESECREENSHOT_BUTTON" textAlignment="CENTER" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="70.0">  
@@ -39,7 +39,7 @@
                   </Label>
                </children>
             </Pane>
-            <HBox id="bottom-box" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="220.0">
+            <HBox fx:id="bottomBox" id="bottom-box" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="220.0">
                <children>
                   <CheckBox id="quick-toggle" fx:id="quickCheck" maxWidth="-Infinity" mnemonicParsing="false" prefWidth="240.0" styleClass="switch-toggle" text="%PRIMARY_QUICK_SCREENSHOT" textFill="WHITE" HBox.hgrow="NEVER">
                      <HBox.margin>

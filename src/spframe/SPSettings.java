@@ -108,6 +108,13 @@ public class SPSettings {
     }
     
     //non-settings window settings
+    protected static void setFirstRun(boolean run){
+        PREFS.putBoolean("FirstRun", run);
+    }
+    protected static boolean isFirstRun(){
+        return PREFS.getBoolean("FirstRun", true);
+    }
+    
     protected static void setTakeWay(int indx){
         PREFS.putInt("TakeScreenshotWay", indx);          
     } 
@@ -127,12 +134,11 @@ public class SPSettings {
     protected static double getPrimaryY(){
         return PREFS.getDouble("PrimaryY", 80);
     }  
-    
-    
+        
     protected static void setQuickScreenshot(boolean enable){
         PREFS.putBoolean("QuickScreenshot", enable);
     }
-    protected static boolean getQuickScreenshot(){
+    protected static boolean isQuickScreenshot(){
         return PREFS.getBoolean("QuickScreenshot", false);
     }
     

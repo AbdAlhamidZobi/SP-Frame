@@ -23,6 +23,9 @@ public class SPMain extends Application {
         System.setProperty("prism.lcdtext", "false");   
         hostService = getHostServices();
         SPSettings.initialize(); 
+        if(SPSettings.isFirstRun()){            
+            SPConfigWizard.showConfigWizard();
+        }
         SPShooter.initialize();
         SPPrimary.initialize();
         SPCapture.initialize();   

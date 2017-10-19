@@ -48,7 +48,8 @@ public class SPPrimaryController implements SPCustomizable{
     
     @FXML public void initialize( ) {         
         this.windowManager = new CustomStage(this.anchorpane,312,478);  
-        this.windowManager.getScene().getRoot().getChildrenUnmodifiable().get(0).setId("primary-back-pane");           
+        this.windowManager.getScene().getRoot().getChildrenUnmodifiable().get(0).setStyle("-fx-border-radius: 5 5 15 15;"
+                + "                                                                        -fx-background-radius: 5 5 15 15");
         this.windowManager.getIcons().addAll(new Image("/rec/icons/transparentlogo/512.png"),
                                           new Image("/rec/icons/transparentlogo/256.png"),
                                           new Image("/rec/icons/transparentlogo/128.png"),
@@ -66,7 +67,7 @@ public class SPPrimaryController implements SPCustomizable{
         this.setUIOrientation(usedOrie.equals("ltr")? 
                 NodeOrientation.LEFT_TO_RIGHT:NodeOrientation.RIGHT_TO_LEFT);  
         
-        this.quickCheck.setSelected(SPSettings.getQuickScreenshot());        
+        this.quickCheck.setSelected(SPSettings.isQuickScreenshot());        
         this.backImageView.setPreserveRatio(false);
         this.backImageView.setCache(true);this.backImageView.setSmooth(true);
         this.backImageView.setEffect(new GaussianBlur(5.8));        
@@ -312,6 +313,7 @@ public class SPPrimaryController implements SPCustomizable{
         else
             this.windowManager.setTitlebarorientation(NodeOrientation.LEFT_TO_RIGHT);        
         this.instrcPane.setNodeOrientation(orientation);
+        this.bottomBox.setNodeOrientation(orientation);
     }
     
     @Override

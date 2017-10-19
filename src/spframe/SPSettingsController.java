@@ -102,7 +102,7 @@ public class SPSettingsController implements SPCustomizable{
                                           new Image("/rec/icons/transparentlogo/32.png"),
                                           new Image("/rec/icons/transparentlogo/24.png"),
                                           new Image("/rec/icons/transparentlogo/16.png")); 
-        this.windowManager.initWindowModality(Modality.APPLICATION_MODAL);        
+        this.windowManager.initCustomModality(Modality.APPLICATION_MODAL);        
     }
     
     private void initListeners(){   
@@ -111,8 +111,7 @@ public class SPSettingsController implements SPCustomizable{
         });
         this.langBox.getSelectionModel().selectedIndexProperty().addListener(
             (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {                                                                                                        
-                this.setApplicationLanguage((int)newValue);
-            
+                this.setApplicationLanguage((int)newValue);            
         });
         
         this.themeBox.getSelectionModel().selectedIndexProperty().addListener(
@@ -159,6 +158,10 @@ public class SPSettingsController implements SPCustomizable{
             SPSettings.setLanguage(lang);
             SPPrimary.getController().setDataKeeperDetails();
             SPCapture.getController().setDataKeeperDetails();
+            if(SPSettings.isFirstRun()){
+                SPConfigWizard.controller.close();
+                SPConfigWizard.showConfigWizard();
+            }
             this.setDataKeeperDetails();
             SPPrimary.initialize();
             SPCapture.initialize();

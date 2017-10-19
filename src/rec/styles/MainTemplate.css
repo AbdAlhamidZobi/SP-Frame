@@ -320,3 +320,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #opt-button{        
     -fx-graphic: url("/rec/icons/settings-icon.png");      
 }
+
+/******************** config language icon *****************
+*                                                          *
+***********************************************************/
+#config-lang{
+    -fx-image: url("/rec/icons/language-icon.png");
+}

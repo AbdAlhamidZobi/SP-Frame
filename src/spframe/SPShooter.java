@@ -250,7 +250,7 @@ public class SPShooter {
     }
             
     protected static boolean isQuickShot(){
-        return SPSettings.getQuickScreenshot();
+        return SPSettings.isQuickScreenshot();
     } 
         
     protected static boolean isFocused(){

@@ -25,7 +25,8 @@ public class SPPrimary {
         if(useDataKeeper)
             controller.useDataKeeperDetails();
         else
-            controller.show();
+            if(!SPSettings.isFirstRun())
+                controller.show();
     }
     
     protected static SPPrimaryController getController(){

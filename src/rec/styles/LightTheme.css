@@ -231,13 +231,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /******************** primary scene ************************
 *                                                          *
 ***********************************************************/
+#primary-foreground,
 #primary-background{
     -fx-background-color: transparent;
-}
-#primary-back-pane{    
-    -fx-border-radius: 5 5 12 12;
-    -fx-background-radius: 5 5 12 12;
-    -fx-background-color:transparent;    
 }
 
 /***** instructor ***********/

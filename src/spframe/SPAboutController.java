@@ -30,7 +30,7 @@ public class SPAboutController implements SPCustomizable{
     @FXML private void initialize(){        
         this.windowManager = new CustomStage(this.mainPane);            
         this.windowManager.setCustomResizable(false);
-        this.windowManager.initWindowModality(Modality.APPLICATION_MODAL);
+        this.windowManager.initCustomModality(Modality.APPLICATION_MODAL);
         this.windowManager.setTitle(this.resources.getString("ABOUT_TITLE")); 
         this.windowManager.getIcons().addAll(new Image("/rec/icons/transparentlogo/512.png"),
                                           new Image("/rec/icons/transparentlogo/256.png"),

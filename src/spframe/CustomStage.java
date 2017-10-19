@@ -70,7 +70,7 @@ public class CustomStage extends Stage{
     
     /**
          * constructs the custom window with a scene contains the passed pane
-         * which height and width properties are the prefered size of the passed pane
+         * which height and width properties are the prefer size of the passed pane
      * @param _p
          */
     public CustomStage(Pane _p){   
@@ -97,7 +97,7 @@ public class CustomStage extends Stage{
         this.backPane = (Pane)this.getScene().getRoot().getChildrenUnmodifiable().get(0);
         this.frontPane = (Pane)this.backPane.getChildren().get(0);         
         initializeUtilitys();  
-        
+                                
         this.minimizeFilter = (InputEvent event) -> {
             event.consume();
         };       
@@ -106,7 +106,8 @@ public class CustomStage extends Stage{
     private Scene generateCustomScene(Pane p ,double width,double height) {              
         boolean isShadowed = true;
         Group rg = new Group();
-        Scene scene = new Scene(rg, width, height, Color.TRANSPARENT);                                  
+        Scene scene = new Scene(rg, width, height, Color.TRANSPARENT);     
+        scene.getStylesheets().add("/rec/styles/CustomWindow.css");   
         
         String osName = System.getProperty("os.name");           
         if( osName != null && osName.startsWith("Windows"))  {            
@@ -126,8 +127,8 @@ public class CustomStage extends Stage{
         this.setCustomHeight(height + tHeight); 
         this.titleBar.setPrefWidth(getCustomWidth());
         this.titleBar.setPrefHeight(tHeight);
-        if(isShadowed == false){
-            pane.setEffect(new DropShadow());             
+        if(!isShadowed){
+            pane.setEffect(new DropShadow());              
             pane.setTranslateX(5);pane.setTranslateY(5);
             this.titleBar.setTranslateX(5);this.titleBar.setTranslateY(5);                      
         }       
@@ -669,8 +670,7 @@ public class CustomStage extends Stage{
         initializeWidnowAligner();            
         this.setMinHeight(this.titleBarHeight.getValue());
         this.setMinWidth(80);
-        this.getScene().getStylesheets().add("/rec/styles/CustomWindow.css");        
-        
+                    
         this.addEventHandler(WindowEvent.WINDOW_SHOWING, handler ->{            
             this.syncBoxParentSize();
         });
@@ -786,7 +786,7 @@ public class CustomStage extends Stage{
                             toReachHeight = 0;
                             break;
                     }
-                    this.showWidnowAligner("toNone".equals(newValue)? false : true);
+                    this.showWidnowAligner(!"toNone".equals(newValue));
                     this.alignPopup.setX(toReachX);
                     this.alignPopup.setY(toReachY);
                     this.alignRect.setWidth(toReachWidth-26);
@@ -825,7 +825,7 @@ public class CustomStage extends Stage{
             maxIcon.setFitHeight(18);maxIcon.setFitWidth(20);        
             this.maxButton.setGraphic(maxIcon);   
             this.maxButton.setId("max-button");
-            new WindowResizer();
+            WindowResizer windowResizer = new WindowResizer();
         }                    
     }      
     
@@ -856,6 +856,7 @@ public class CustomStage extends Stage{
     
     private void onTitlebarHeightChanged(double oldValue,double newValue){        
                 this.titleBar.setPrefHeight(newValue);
+                this.setCustomHeight(getCustomHeight()+ (newValue-oldValue)+5);
                 if(this.closeButton != null){
                     this.closeButton.setStyle("-fx-padding: "+(0.1470 * newValue)+" "+
                                             (0.2941 * newValue)+" "+
@@ -885,7 +886,8 @@ public class CustomStage extends Stage{
             this.titleBar.setPrefWidth(newWidth+1);
             
             double tHeight = getTitlebarHeight();            
-            this.frontPane.setPrefSize(newWidth, newHeight-tHeight);
+            this.frontPane.setPrefSize(newWidth, newHeight-tHeight);     
+            this.frontPane.setTranslateY(tHeight);
             this.backPane.setPrefSize(newWidth, newHeight);      
             
             Platform.runLater(() -> {
@@ -1010,7 +1012,7 @@ public class CustomStage extends Stage{
             return h;
     }  
           
-    public void initWindiwOwner(Window owner){
+    public void initCustomOwner(Window owner){
         if(owner == null) return;        
         this.initOwner(owner);
         Modality mod = this.getModality();
@@ -1020,7 +1022,7 @@ public class CustomStage extends Stage{
             this.titleBar.getChildren().remove(this.minButton);      
     }
     
-    public void initWindowModality(Modality mod){
+    public void initCustomModality(Modality mod){
         if(mod == null) return;
         this.initModality(mod);
         if(mod.equals(Modality.APPLICATION_MODAL))

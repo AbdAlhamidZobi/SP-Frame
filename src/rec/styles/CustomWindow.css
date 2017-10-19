@@ -79,7 +79,7 @@
 }
 
 #background{           
-   -fx-background-color: whitesmoke;
+    -fx-background-color: whitesmoke;
     -fx-border-color: transparent #666666 #666666 #666666;  
     -fx-border-width: 1;
     -fx-background-radius: 5 5 0 0;
