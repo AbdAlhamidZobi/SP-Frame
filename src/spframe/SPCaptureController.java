@@ -65,6 +65,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.stage.Popup;
 import javafx.stage.Screen;
+import javafx.stage.WindowEvent;
 
 /**
  * this class describes after-capture scene controller
@@ -185,10 +186,20 @@ public class SPCaptureController implements SPCustomizable{
         GridPane pane = (GridPane)this.saveDialog.getDialogPane().getChildren().get(0);        
         pane.setPrefHeight(50);    
                         
-        this.windowManager.setOnCloseRequest(value ->{                         
-            if(SPSettings.getSaveDialogShow() == false || this.getFrameChanged() == false)
-                return;            
-            Optional<ButtonType> response = this.saveDialog.showAndWait();
+        this.windowManager.setOnCloseRequest(value ->{  
+            
+            String data = (String) windowManager.getUserData();
+            if(data != null && data.equals("language")){                
+                windowManager.setUserData(null);
+                return;
+            }
+            
+            if(!this.windowManager.isShowing() ||
+               SPSettings.getSaveDialogShow() == false || 
+               this.getFrameChanged() == false)
+                return;         
+            
+            Optional<ButtonType> response = this.saveDialog.showAndWait();            
             if(response.get() == buttonYes)
                 this.showSaveChooser();     
             else if(response.get() == buttonCancel)
@@ -284,7 +295,7 @@ public class SPCaptureController implements SPCustomizable{
                 
                 this.layerManager.getLayers(),        // 6
                 this.toolManager.getSelectedTool());  // 7
-                
+        windowManager.setUserData("language");
         this.windowManager.close();
     }
     @Override
