@@ -10,6 +10,3 @@ Simple Purpose Frame or (SP Frame) is a simple app for taking screenshots based 
  <br> the resources files including .fxml files,images,language files,styles,...
 
 this project is under the GNU3 licence for more read the "LICENCE" file.
-
-the program was and still being created by me:
-## Abd Alhamid Zobi
